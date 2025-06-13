@@ -1,5 +1,6 @@
 package com.example.beu2w2project.services;
 
+import com.example.beu2w2project.dtos.StatoViaggioDTO;
 import com.example.beu2w2project.dtos.ViaggioDTO;
 import com.example.beu2w2project.entities.Viaggio;
 import com.example.beu2w2project.enumerated.StatoViaggio;
@@ -31,6 +32,25 @@ public class ViaggioService {
         nuovoViaggio.setDataViaggio(viaggioDto.getDataViaggio());
         nuovoViaggio.setStato(StatoViaggio.IN_PROGRAMMA);
         return viaggioRepo.save(nuovoViaggio);
-
     }
+
+    public Viaggio updateViaggio(int id,ViaggioDTO viaggioDTO){
+        Viaggio viaggioAggiornato= findById(id);
+        viaggioAggiornato.setDestinazione(viaggioDTO.getDestinazione());
+        viaggioAggiornato.setDataViaggio(viaggioDTO.getDataViaggio());
+        return viaggioRepo.save(viaggioAggiornato);
+    }
+
+    public Viaggio updateStato(int id, StatoViaggioDTO statoViaggioDTO){
+        Viaggio viaggio= findById(id);
+        viaggio.setStato(statoViaggioDTO.getStato());
+        return viaggioRepo.save(viaggio);
+    }
+
+    public void deleteViaggio(int id){
+        Viaggio viaggio= findById(id);
+        viaggioRepo.delete(viaggio);
+    }
+
+
 }
