@@ -4,6 +4,7 @@ import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.example.beu2w2project.dtos.DipendenteDTO;
 import com.example.beu2w2project.entities.Dipendente;
+import com.example.beu2w2project.exceptions.NotFoundException;
 import com.example.beu2w2project.repositories.DipendenteRepository;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;

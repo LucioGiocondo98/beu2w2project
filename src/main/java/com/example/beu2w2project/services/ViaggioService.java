@@ -4,6 +4,7 @@ import com.example.beu2w2project.dtos.StatoViaggioDTO;
 import com.example.beu2w2project.dtos.ViaggioDTO;
 import com.example.beu2w2project.entities.Viaggio;
 import com.example.beu2w2project.enumerated.StatoViaggio;
+import com.example.beu2w2project.exceptions.NotFoundException;
 import com.example.beu2w2project.repositories.ViaggioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
