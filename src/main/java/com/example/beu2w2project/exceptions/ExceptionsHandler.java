@@ -1,10 +1,8 @@
 package com.example.beu2w2project.exceptions;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
 import java.time.LocalDateTime;
 import java.util.stream.Collectors;
 
@@ -12,7 +10,7 @@ import java.util.stream.Collectors;
 public class ExceptionsHandler {
 
     @ExceptionHandler(BadRequestException.class)
-    public ResponseEntity<ErrorsPayload> handleBadRequest(BadRequestException ex) {
+    public ResponseEntity<?> handleBadRequest(BadRequestException ex) {
         if (ex.getErrorList() != null) {
             String message = ex.getErrorList().stream()
                     .map(objectError -> objectError.getDefaultMessage())

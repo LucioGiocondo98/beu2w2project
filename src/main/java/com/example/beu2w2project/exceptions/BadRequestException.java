@@ -7,12 +7,15 @@ import java.util.List;
 import java.util.Objects;
 @Getter
 public class BadRequestException extends RuntimeException {
-        private List<ObjectError>errorList;
-        public BadRequestException(String message){
-            super(message);
+    private final List<ObjectError> errorList;
+
+    public BadRequestException(String message) {
+        super(message);
+        this.errorList = null;
     }
-    public BadRequestException(List<ObjectError>errorList){
-            super("Errore di validazione nel payload");
-            this.errorList=errorList;
+
+    public BadRequestException(List<ObjectError> errorList) {
+        super("Errore di validazione nel payload");
+        this.errorList = errorList;
     }
 }

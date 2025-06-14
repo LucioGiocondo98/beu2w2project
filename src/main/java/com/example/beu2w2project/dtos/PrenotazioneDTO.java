@@ -8,6 +8,6 @@ public class PrenotazioneDTO {
     @NotNull(message = "L'ID del dipendente è obbligatorio")
     private int dipendenteId;
     @NotNull(message = "L'ID del viaggio è obbligatorio")
-    private int viaggioID;
+    private int viaggioId;
     private String note;
 }
